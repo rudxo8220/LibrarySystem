@@ -128,69 +128,20 @@ class Library:
 
     def modify(self):
         print("도서 정보 수정")
-        print("1.도서명 2.저자 3.출판년도 4.출판사명 5.장르(이외의 입력은 메뉴로 돌아가용)")
-        search_num2 = int(input("숫자입력 : "))
-        if search_num2 == 1:
-            UserInput = str(input("수정할 도서명을 입력해주세요. \n입력: "))
-            for i in range(len(self.Booklist)):    
-                if UserInput == self.Booklist[i][0]:
-                    print("수정할 정보입력")
-                    UserInput_MDY = list(map(str, input("도서명 저자 출판일 출판사명 장르 (입력) :").split()))
-                    del self.Booklist[i]
-                    self.Booklist.insert(i, UserInput_MDY) ##i번째에 있는 정보를 삭제하고 그 자리에 변경한 정보를 끼워넣는다.
-                    print("수정 완료")
-                    return self.Menu()
-                else:
-                    if i == len(self.Booklist):
-                        print("수정할 도서가 없습니다.")
-            return self.Menu()
-        elif search_num2 == 2:
-            UserInput = str(input("수정할 도서의 저자를 입력해주세요. \n입력: "))
-            for i in range(len(self.Booklist)):    
-                if UserInput == self.Booklist[i][1]:
-                    print("수정할 정보입력")
-                    UserInput_MDY = list(map(str, input("도서명 저자 출판일 출판사명 장르 (입력) :").split()))
-                    del self.Booklist[i]
-                    self.Booklist.insert(i, UserInput_MDY)
-                    print("수정 완료")
-                    return self.Menu()
-                else:
-                    if i == len(self.Booklist):
-                        print("수정할 도서가 없습니다.")
-            return self.Menu()    
-        elif search_num2 == 3:
-            UserInput = str(input("수정할 도서의 출판연도를 입력해주세요. \n입력: "))
-            for i in range(len(self.Booklist)):    
-                if UserInput == self.Booklist[i][2]:
-                    print("수정할 정보입력")
-                    UserInput_MDY = list(map(str, input("도서명 저자 출판일 출판사명 장르 (입력) :").split()))
-                    del self.Booklist[i]
-                    self.Booklist.insert(i, UserInput_MDY)
-                    print("수정 완료")
-                    return self.Menu()
-                else:
-                    if i == len(self.Booklist):
-                        print("수정할 도서가 없습니다.")
-            return self.Menu()
-        elif search_num2 == 4:
-            print("겹치는 출판사가 있기 때문에 pass해줍니다. 다른걸로 골라주세용")
-            return self.modify()
-        elif search_num2 == 5:
-            UserInput = str(input("수정할 도서의 장르를 입력해주세요. \n입력: "))
-            for i in range(len(self.Booklist)):    
-                if UserInput == self.Booklist[i][4]:
-                    print("수정할 정보입력")
-                    UserInput_MDY = list(map(str, input("도서명 저자 출판일 출판사명 장르 (입력) :").split()))
-                    del self.Booklist[i]
-                    self.Booklist.insert(i, UserInput_MDY)
-                    print("수정 완료")
-                    return self.Menu()
-                else:
-                    if i == len(self.Booklist):
-                        print("수정할 도서가 없습니다.")
-            return self.Menu()
-        else:
-            return self.Menu()
+        UserInput = str(input("수정할 도서명을 입력해주세요. \n입력: "))
+        for i in range(len(self.Booklist)):    
+            if UserInput == self.Booklist[i][0]:
+                print("수정할 정보입력")
+                UserInput_MDY = list(map(str, input("도서명 저자 출판일 출판사명 장르 (입력) :").split()))
+                del self.Booklist[i]
+                self.Booklist.insert(i, UserInput_MDY) ##i번째에 있는 정보를 삭제하고 그 자리에 변경한 정보를 끼워넣는다.
+                print("수정 완료")
+                return self.Menu()
+            else:
+                if i == len(self.Booklist):
+                    print("수정할 도서가 없습니다.")
+        return self.Menu()
+        
 
     def DeleteBook(self):
         print("도서 삭제")
