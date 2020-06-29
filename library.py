@@ -8,7 +8,6 @@ class Library:
         self.Booklist = Booklist
         self.User_Add_Booklist = []
         self.Book = []
-        self.User_Book_Search = []
 
     def Menu(self):
         try:
